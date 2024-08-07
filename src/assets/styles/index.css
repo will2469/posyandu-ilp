@@ -1,0 +1,300 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Normalize CSS */
+@import 'normalize.css';
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Import Boxicons */
+@import url('https://unpkg.com/boxicons@latest/css/boxicons.min.css');
+
+/* Color Palette */
+:root {
+  --primary-color: #4CAF50; /* Health Green */
+  --secondary-color: #2196F3; /* Trust Blue */
+  --accent-color: #FFEB3B; /* Vibrant Yellow */
+  --neutral-color: #F5F5F5; /* Light Gray */
+  --highlight-color: #FF9800; /* Soft Orange */
+  --error-color: #F44336; /* Red for errors */
+  --warning-color: #FFA726; /* Bright Orange for warnings */
+  
+  /* Font Colors */
+  --font-color-light: #FFFFFF; /* White */
+  --font-color-dark: #1c1c1c; /* Dark Gray for text */
+  --font-color-primary: var(--font-color-dark); /* Default text color */
+  --font-color-secondary: var(--font-color-light); /* Light text color for dark backgrounds */
+  --font-color-gray: #6B7280; /* Gray color */
+}
+
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--neutral-color); /* Neutral Color */
+  color: var(--font-color-primary); /* Default text color */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; /* Base font size for rem calculations */
+  overflow-x: hidden;
+}
+
+/* Home styles */
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.home-content {
+  max-width: 600px; /* Limit the width for better readability */
+}
+
+.btn {
+  display: inline-flex; /* Changed to inline-flex for better alignment */
+  align-items: center; /* Center align items */
+  justify-content: center; /* Center align items */
+  padding: 12px 28px; /* Increased padding for a more modern look */
+  font-size: 1.4rem; /* Set a larger font size */
+  font-weight: 600;
+  border: none; /* Remove border */
+  border-radius: 6px; /* Slightly rounded corners */
+  cursor: pointer;
+  background-color: var(--primary-color); /* Primary Color */
+  color: var(--font-color-light); /* White text */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+.btn:hover {
+  background-color: #45A049; /* Darker Health Green - you can change this to var(--primary-color) if you want consistency */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+span {
+  color: var(--secondary-color); /* Secondary Color */
+}
+
+.home-content h3 {
+  font-size: 2.4rem; /* Adjust font size */
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.home-content h1 {
+  font-size: 3.6rem; /* Adjust font size */
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.home-content p {
+  font-size: 1.6rem; /* Adjust font size */
+  margin-top: 20px;
+}
+
+.home-img {
+  display: none; /* Hide image on mobile */
+}
+
+@media (min-width: 768px) {
+  .home {
+    flex-direction: row; /* Align side by side on larger screens */
+  }
+  
+  .home-content {
+    flex: 1; /* Take up space */
+  }
+
+  .home-img {
+    display: block; /* Show image on larger screens */
+    flex: 1; /* Take up space */
+    max-width: 600px; /* Limit the width */
+  }
+
+  .home-img img {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 400px; /* Limit height */
+    animation: floatImage 4s ease-in-out infinite; /* Keep float animation */
+  }
+}
+
+@media (max-width: 767px) {
+  .home {
+    flex-direction: column; /* Stack vertically on small screens */
+  }
+  
+  .home-img {
+    display: block; /* Show image on mobile */
+    margin-top: 20px; /* Add margin for spacing */
+  }
+
+  .home-img img {
+    width: 70%; /* Make image responsive on mobile */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .home-content h3 {
+    font-size: 1.8rem; /* Adjust font size for mobile */
+  }
+  
+  .home-content h1 {
+    font-size: 2.4rem; /* Adjust font size for mobile */
+  }
+  
+  .home-content p {
+    font-size: 1.4rem; /* Adjust font size for mobile */
+  }
+}
+
+.btn-logout {
+  display: inline-flex; /* Change to inline-flex for better alignment */
+  align-items: center; /* Center align items */
+  justify-content: center; /* Center align items */
+  padding: 10px 20px;
+  background: var(--primary-color); /* Use primary color */
+  color: var(--neutral-color);
+  border: none;
+  border-radius: 6px; /* Slightly rounded corners */
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-logout:hover {
+  background: var(--highlight-color); /* Use highlight color for hover */
+}
+
+/* Base styles for input */
+.input-base {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Jarak antar input */
+  width: 100%;
+}
+
+.input-field {
+  position: relative;
+  height: 2.5rem; /* Sesuaikan tinggi sesuai kebutuhan */
+  width: 100%;
+}
+
+.input-field input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--neutral-color); /* Use neutral color for border */
+  background-color: transparent;
+  padding-top: 1rem; /* Padding atas untuk label */
+  padding-bottom: 0.5rem; /* Padding bawah untuk input */
+  padding-left: 2.5rem; /* Padding kiri untuk memberi ruang pada ikon */
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.input-field input:focus {
+  outline: none;
+  border-color: var(--secondary-color); /* Use secondary color when focused */
+}
+
+.input-field label {
+  position: absolute;
+  left: 1rem; /* Jarak dari kiri untuk label */
+  top: 50%; /* Posisikan label di tengah */
+  transform: translateY(-50%); /* Mengatur posisi label di tengah */
+  font-size: 1rem;
+  color: var(--font-color-gray); /* Use a consistent color if needed */
+  transition: all 0.3s;
+}
+
+.input-field input:focus + label,
+.input-field input:not(:placeholder-shown) + label {
+  top: -0.5rem; /* Pindahkan label ke atas saat fokus atau terisi */
+  font-size: 0.75rem; /* Ukuran font label ketika fokus */
+  color: var(--secondary-color); /* Use secondary color for label when focused */
+}
+
+/* Mengatur tampilan checkbox dan label */
+input[type="checkbox"] {
+  width: 1.25rem; /* Ukuran checkbox */
+  height: 1.25rem; /* Ukuran checkbox */
+  accent-color: #4CAF50; /* Warna checkbox */
+}
+
+/* Mengatur tampilan label untuk checkbox */
+label {
+  cursor: pointer; /* Menambahkan pointer saat hover */
+  font-size: 1rem; /* Ukuran font label */
+}
+
+/* Mengatur jarak antara checkbox dan label */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Jarak antara checkbox dan label */
+}
+
+/* Mengatur gaya untuk kesalahan */
+#error-message {
+  color: #f44336; /* Warna untuk pesan kesalahan */
+  font-size: 0.875rem; /* Ukuran font untuk pesan kesalahan */
+}
+
+/* Menyesuaikan styling untuk input dan label */
+.input-field {
+  position: relative; /* Membuat posisi relatif untuk ikon */
+}
+
+/* Gaya untuk label saat input tidak aktif */
+.input-field label {
+  position: absolute; /* Mengatur label ke posisi absolut */
+  top: 50%; /* Mengatur posisi label di tengah */
+  left: 2.5rem; /* Jarak dari kiri */
+  transform: translateY(-50%); /* Menjaga label tetap di tengah */
+  transition: all 0.2s ease; /* Transisi halus saat input aktif */
+}
+
+/* Gaya untuk label saat input aktif */
+.input-field input:focus + label,
+.input-field input:not(:placeholder-shown) + label {
+  top: -0.5rem; /* Memindahkan label ke atas saat aktif */
+  font-size: 0.75rem; /* Mengubah ukuran font label saat aktif */
+  color: var(--secondary-color); /* Mengubah warna label saat aktif */
+}
+/* Custom Checkbox Styling */
+.checkbox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Hide the default checkbox */
+.checkbox input[type="checkbox"] {
+  display: none; /* Hide the default checkbox */
+}
+
+/* Custom Checkbox Styling */
+.checkbox-indicator {
+  position: relative; /* Positioning for the checkmark */
+}
+
+/* Checkmark */
+.checkmark {
+  position: absolute; /* Positioning for the checkmark */
+  left: 0.25rem; /* Adjust position */
+  top: 0.5rem; /* Adjust position */
+  display: none; /* Hide checkmark by default */
+}
+
+/* Show the checkmark when checked */
+input[type="checkbox"]:checked + .checkbox-indicator .checkmark {
+  display: block; /* Show checkmark when checked */
+}
+
