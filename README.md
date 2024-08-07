@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Posyandu ILP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Posyandu ILP adalah aplikasi untuk pendataan kesehatan dasar yang digunakan oleh pendata sebagai alat untuk mengumpulkan data kelompok masyarakat. Aplikasi ini dikembangkan menggunakan React.js dan Tailwind CSS untuk tampilan antarmuka yang modern dan responsif.
 
-## Available Scripts
+## Deskripsi
 
-In the project directory, you can run:
+Aplikasi ini dirancang untuk memfasilitasi pendataan kesehatan pada berbagai jenjang umur dalam komunitas. Data yang dikumpulkan meliputi informasi dasar kesehatan, yang kemudian dapat digunakan untuk analisis dan pelaporan. Dengan menggunakan Firebase sebagai backend, aplikasi ini memastikan data tersimpan dengan aman dan dapat diakses dengan mudah oleh pengguna yang berwenang.
 
-### `npm start`
+## Fitur
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Autentikasi Pengguna**: Login dan pendaftaran menggunakan Firebase Authentication.
+- **Pendataan Kesehatan**: Formulir untuk memasukkan data kesehatan dasar.
+- **Komponen Lazy Load**: Memuat komponen hanya saat dibutuhkan untuk meningkatkan performa aplikasi.
+- **Desain Responsif**: Tampilan yang optimal di berbagai perangkat menggunakan Tailwind CSS.
+- **Keamanan Data**: Implementasi OWASP ZAP untuk pengujian keamanan aplikasi.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Rencana Pengembangan
 
-### `npm test`
+1. **Integrasi Chatbot**: Menggunakan Dialogflow untuk membantu pengguna memahami alur aplikasi dan memberikan bantuan real-time.
+2. **Keamanan Data**:
+   - Penggunaan OWASP ZAP untuk mendeteksi kerentanan keamanan.
+   - Implementasi AI untuk mendeteksi aktivitas mencurigakan dan mencegah serangan siber.
+3. **GitHub Copilot**: Memanfaatkan GitHub Copilot untuk efisiensi pengembangan kode.
+4. **Dashboard**: Pengembangan dashboard untuk visualisasi data kesehatan yang mudah dipahami oleh pengguna.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Struktur Folder
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+posyandu-ilp/
+├── public/
+│ ├── index.html
+│ └── favicon.ico
+├── src/
+│ ├── assets/ // Static assets (images, fonts, etc.)
+│ │ └── styles/ // Global styles (CSS, Tailwind, etc.)
+│ │ └── index.css // Global CSS file
+│ ├── components/ // Reusable components (buttons, inputs, etc.)
+│ ├── pages/ // Page components (Landing, Auth, Admin, etc.)
+│ │ ├── Landing/ // Landing page components
+│ │ │ └── Landing.js
+│ │ ├── Auth/ // Authentication page components
+│ │ │ ├── Login.js
+│ │ │ └── ResetPassword.js
+│ │ ├── Admin/ // Admin page components
+│ │ │ ├── Admin.js
+│ │ │ └── Sidebar.js
+│ ├── context/ // Context providers for global state management
+│ ├── hooks/ // Custom hooks
+│ ├── services/ // API services (Firebase, etc.)
+│ │ └── firebase.js
+│ ├── App.js // Main App component
+│ ├── index.js // Entry point
+│ └── utils/ // Utility functions
+├── .env // Environment variables
+├── .gitignore // Git ignore file
+├── package.json // Project dependencies and scripts
+├── postcss.config.js // PostCSS configuration file
+└── tailwind.config.js // Tailwind CSS configuration file
