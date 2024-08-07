@@ -54,4 +54,10 @@ posyandu-ilp/
 ├── .gitignore // Git ignore file
 ├── package.json // Project dependencies and scripts
 ├── postcss.config.js // PostCSS configuration file
-└── tailwind.config.js // Tailwind CSS configuration file
+└── tailwind.config.js // Tailwind CSS configuration
+
+ ## Disclaimer
+
+This application has been personally developed to assist my village with health data registration. Please note that this project is not affiliated with or supported by any government entity.
+
+
